@@ -1,8 +1,16 @@
 const helloWorld = {
-  mutationObserverConfig: {
-    characterData: true,
-    childList: true,
-    subtree: true,
+  init() {
+    Array.from(document.querySelectorAll('[data-cmp-is="helloworld"]')).forEach(
+      (helloWorldElement) => {
+        (helloWorldElement as HTMLDivElement).removeAttribute('data-cmp-is');
+        helloWorld.logPropertyAndModel(helloWorldElement as HTMLDivElement);
+      },
+    );
+
+    helloWorld.mutationObserver.observe(
+      document.body,
+      helloWorld.mutationObserverConfig,
+    );
   },
 
   logPropertyAndModel(helloWorldElement: HTMLDivElement) {
@@ -33,22 +41,18 @@ const helloWorld = {
             addedNode as HTMLElement
           ).querySelectorAll('[data-cmp-is="helloworld"]');
           Array.from(addedHelloWorldElements).forEach((helloWorldElement) => {
-            this.logPropertyAndModel(helloWorldElement as HTMLDivElement);
+            helloWorld.logPropertyAndModel(helloWorldElement as HTMLDivElement);
           });
         }
       });
     });
   }),
 
-  init() {
-    Array.from(document.querySelectorAll('[data-cmp-is="helloworld"]')).forEach((helloWorldElement) => {
-      (helloWorldElement as HTMLDivElement).removeAttribute('data-cmp-is');
-      this.logPropertyAndModel(helloWorldElement as HTMLDivElement);
-    });
-   
-    this.mutationObserver.observe(document.body, this.mutationObserverConfig);  
-  }
-
+  mutationObserverConfig: {
+    characterData: true,
+    childList: true,
+    subtree: true,
+  },
 };
 
 document.addEventListener('DOMContentLoaded', () => {
