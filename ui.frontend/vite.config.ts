@@ -1,5 +1,6 @@
 import path from 'path';
 import { defineConfig } from 'vite';
+import sassGlobImports from 'vite-plugin-sass-glob-import';
 
 export default defineConfig({
   build: {
@@ -31,7 +32,7 @@ export default defineConfig({
     },
   },
   root: path.join(__dirname, 'src'),
-  plugins: [],
+  plugins: [sassGlobImports()],
   server: {
     port: 3000,
     proxy: {
