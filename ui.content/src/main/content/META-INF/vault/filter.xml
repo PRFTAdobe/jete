@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspaceFilter version="1.0">
+    <filter root="/conf/jete" mode="merge"/>
+    <filter root="/content/jete" mode="merge"/>
+    <filter root="/content/dam/jete" mode="merge">
+        <exclude pattern="/content/dam/jete(/.*)?"/>
+        <include pattern="/content/dam/jete/jcr:content(/.*)?"/>
+    </filter>
+    <filter root="/content/dam/jete/asset.jpg" mode="merge"/>
+    <filter root="/content/experience-fragments/jete" mode="merge"/>
+</workspaceFilter>

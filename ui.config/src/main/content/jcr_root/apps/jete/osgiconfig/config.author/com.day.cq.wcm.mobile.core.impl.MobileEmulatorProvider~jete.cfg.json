@@ -1,0 +1,6 @@
+{
+  "mobile.resourceTypes": [
+    "jete/components/page"
+  ],
+  "README": "Indicate which page resource types should display the mobile emulators."
+}

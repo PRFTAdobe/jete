@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspaceFilter version="1.0">
+    <filter root="/apps/jete/clientlibs"/>
+    <filter root="/apps/jete/components"/>
+    <filter root="/apps/jete/i18n"/>
+</workspaceFilter>
