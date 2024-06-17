@@ -3,14 +3,11 @@ const helloWorld = {
     Array.from(document.querySelectorAll('[data-cmp-is="helloworld"]')).forEach(
       (helloWorldElement) => {
         (helloWorldElement as HTMLDivElement).removeAttribute('data-cmp-is');
-        helloWorld.logPropertyAndModel(helloWorldElement as HTMLDivElement);
+        this.logPropertyAndModel(helloWorldElement as HTMLDivElement);
       },
     );
 
-    helloWorld.mutationObserver.observe(
-      document.body,
-      helloWorld.mutationObserverConfig,
-    );
+    this.mutationObserver.observe(document.body, this.mutationObserverConfig);
   },
 
   logPropertyAndModel(helloWorldElement: HTMLDivElement) {
