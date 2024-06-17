@@ -1,0 +1,99 @@
+{
+  "root": true,
+  "env": {
+    "browser": true,
+    "es2020": true
+  },
+  "extends": [
+    "airbnb-base",
+    "airbnb-typescript/base",
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended-type-checked",
+    "plugin:@typescript-eslint/stylistic-type-checked",
+    "plugin:typescript-sort-keys/recommended",
+    "prettier"
+  ],
+  "ignorePatterns": [
+    "dist",
+    ".eslintrc.json",
+    "clientlib.config.ts",
+    "aem-sync-push.ts",
+    "aem-clientlib-generator.d.ts",
+    "aemsync.d.ts",
+    "index.html",
+    "vite.config.ts"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "sourceType": "module",
+    "project": [
+      "./tsconfig.json"
+    ]
+  },
+  "plugins": [
+    "import",
+    "@typescript-eslint",
+    "sort-keys",
+    "typescript-sort-keys",
+    "prettier"
+  ],
+  "rules": {
+    "prefer-template": "error",
+    "import/extensions": [
+      2,
+      "ignorePackages",
+      {
+        "tsx": "never",
+        "ts": "never"
+      }
+    ],
+    "import/prefer-default-export": 0,
+    "max-classes-per-file": [
+      1
+    ],
+    "no-console": [
+      1,
+      {
+        "allow": [
+          "error",
+          "warn",
+          "info"
+        ]
+      }
+    ],
+    "no-param-reassign": [
+      2,
+      {
+        "props": false
+      }
+    ],
+    "no-plusplus": [
+      2,
+      {
+        "allowForLoopAfterthoughts": true
+      }
+    ],
+    "prettier/prettier": [
+      "error"
+    ],
+    "@typescript-eslint/no-empty-function": 0,
+    "@typescript-eslint/ban-ts-comment": "off",
+    "@typescript-eslint/no-shadow": "off",
+    "sort-keys": 0,
+    "sort-keys/sort-keys-fix": 2
+  },
+  "settings": {
+    "import/parsers": {
+      "@typescript-eslint/parser": [
+        ".ts",
+        ".tsx"
+      ]
+    },
+    "import/resolver": {
+      "typescript": {
+        "alwaysTryTypes": true
+      }
+    }
+  }
+}

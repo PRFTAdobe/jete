@@ -1,0 +1,21 @@
+{
+  "plugins": {
+    "stylelint": {
+      "configFile": "./.stylelintrc.json",
+      "maxWarnings": true,
+      "fix": true,
+      "reporters": [
+        {
+          "formatter": "string",
+          "console": true
+        }
+      ]
+    },
+    "autoprefixer": {},
+    "postcss-logical": {
+      "blockDirection": "top-to-bottom",
+      "inlineDirection": "left-to-right"
+    },
+    "postcss-dir-pseudo-class": {}
+  }
+}
