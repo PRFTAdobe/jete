@@ -1,5 +1,17 @@
+:root {
+  --navigation-group-list-style: disc;
+  --navigation-group-margin-block: 1em;
+  --navigation-group-padding-inline-start: 40px;
+}
+
 .cmp-navigation {}
-.cmp-navigation__group {}
+
+.cmp-navigation__group {
+  list-style: var(--navigation-group-list-style);
+  margin-block: var(--navigation-group-margin-block);
+  padding-inline-start: var(--navigation-group-padding-inline-start);
+}
+
 .cmp-navigation__item {}
 .cmp-navigation__item--active {}
 

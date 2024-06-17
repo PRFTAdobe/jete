@@ -3,6 +3,10 @@
 // XF Header style, used on page template
 
 header.experiencefragment {
+    --navigation-group-list-style: none;
+    --navigation-group-margin-block: 0;
+    --navigation-group-padding-inline-start: 0;
+
     border-block-end: 1px solid $color-foreground;
     padding: .5em 1em;
 
@@ -37,12 +41,6 @@ header.experiencefragment {
     }
 
     // Navigation
-
-    .cmp-navigation__group {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-    }
 
     .cmp-navigation__item--level-0 {
         display: grid;
