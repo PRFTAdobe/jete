@@ -1,6 +1,4 @@
 const helloWorld = {
-  helloWorldSelector: '[data-cmp-is="helloworld"]',
-  helloWorldElements: document.querySelectorAll(this.helloWorldSelector),
   mutationObserverConfig: {
     characterData: true,
     childList: true,
@@ -33,7 +31,7 @@ const helloWorld = {
         if (addedNode.nodeName === 'DIV') {
           const addedHelloWorldElements = (
             addedNode as HTMLElement
-          ).querySelectorAll(this.helloWorldSelector);
+          ).querySelectorAll('[data-cmp-is="helloworld"]');
           Array.from(addedHelloWorldElements).forEach((helloWorldElement) => {
             this.logPropertyAndModel(helloWorldElement as HTMLDivElement);
           });
@@ -43,11 +41,11 @@ const helloWorld = {
   }),
 
   init() {
-    Array.from(this.helloWorldElements).forEach((helloWorldElement) => {
+    Array.from(document.querySelectorAll('[data-cmp-is="helloworld"]')).forEach((helloWorldElement) => {
       (helloWorldElement as HTMLDivElement).removeAttribute('data-cmp-is');
       this.logPropertyAndModel(helloWorldElement as HTMLDivElement);
     });
-    
+   
     this.mutationObserver.observe(document.body, this.mutationObserverConfig);  
   }
 
